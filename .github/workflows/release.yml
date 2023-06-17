@@ -87,7 +87,7 @@ jobs:
       with:
         file-name: hashes.txt
 
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: Asset Hashes
         path: hashes.txt
