@@ -83,7 +83,7 @@ jobs:
         body_path: ./CHANGELOG.md
         draft: false
 
-    - uses: MCJack123/ghaction-generate-release-hashes@v3
+    - uses: MCJack123/ghaction-generate-release-hashes@v4
       with:
         file-name: hashes.txt
 
