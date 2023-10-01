@@ -46,7 +46,7 @@ It will tolerate redundant profiles.
 
 On MacOS: `brew install clouddrove/kuconf`
 
-(if you happen to use brew on linux, you can also use the above)
+(if you happen to use brew on Linux, you can also use the above)
 
 On Linux or Windows:  Download the appropriate package from the 
 [latest release](https://github.com/clouddrove/kuconf/releases) page.
@@ -97,11 +97,10 @@ Info
 ### Specifying Profiles
 
 Unless overridden, this program will try to use every profile found in `~/.aws/credentials`. It is
-*NOT* an error if the profile's initial session connection is rejected (i.e. you can have out of
-date profiles without causing problems). Any profile which cannot be used will be reported as an
+*NOT* an error if the profile's initial session connection is rejected (i.e. you can have out-of-date profiles without causing problems). Any profile which cannot be used will be reported as an
 error but will *NOT* impact the exit value of the run.
 
-Profiles can be overriden by `--profiles` command line option or the `AWS_PROFILES` environment
+Profiles can be overridden by `--profiles` command line option or the `AWS_PROFILES` environment
 variable.
 
 ### Specifying Regions
@@ -120,16 +119,16 @@ environment variable.
 
 
 ## Credit to author
-The author of this [repo](https://github.com/deweysasser/eks-kubeconfig-update) is Mr. Dewey Sasser, we truly appreciate his efforts and time for creating it.
+The author of [Orignal Repo](https://github.com/deweysasser/eks-kubeconfig-update) is [Mr. Dewey Sasser](https://github.com/deweysasser), we truly appreciate his efforts and time in creating it.
 
 ## Feedback 
-If you come accross a bug or have any feedback, please log it in our [issue tracker](https://github.com/clouddrove/kuconf/issues), or feel free to drop us an email at [hello@clouddrove.com](mailto:hello@clouddrove.com).
+If you come across a bug or have any feedback, please log it in our [issue tracker](https://github.com/clouddrove/kuconf/issues), or feel free to drop us an email at [hello@clouddrove.com](mailto:hello@clouddrove.com).
 
 If you have found it worth your time, go ahead and give us a ★ on [our GitHub](https://github.com/clouddrove/kuconf)!
 
 ## About us
 
-At [CloudDrove][website], we offer expert guidance, implementation support and services to help organisations accelerate their journey to the cloud. Our services include docker and container orchestration, cloud migration and adoption, infrastructure automation, application modernisation and remediation, and performance engineering.
+At [CloudDrove][website], we offer expert guidance, implementation support and services to help organizations accelerate their journey to the cloud. Our services include docker and container orchestration, cloud migration and adoption, infrastructure automation, application modernization and remediation, and performance engineering.
 
 <p align="center">We are <b> The Cloud Experts!</b></p>
 <hr />
