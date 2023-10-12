@@ -75,11 +75,20 @@ jobs:
       id: generate-changelog
       run: PATH="${PATH}:." make CHANGELOG.md
 
+    - name: Generate checksum
+      run: |
+        cd artifacts
+        shasum -a 256 kuconf-linux-arm64.zip >> checksum.txt
+        shasum -a 256 kuconf-linux-amd64.zip >> checksum.txt
+        shasum -a 256 kuconf-darwin-arm64.zip >> checksum.txt
+        shasum -a 256 kuconf-darwin-amd64.zip >> checksum.txt
+    
     - name: Create Release
       id: create_release
       uses: softprops/action-gh-release@v1
       with:
-        files: ./artifacts/*
+        files: |
+          ./artifacts/*
         body_path: ./CHANGELOG.md
         draft: false
                 
@@ -111,7 +120,6 @@ jobs:
 
       - name: Push Latest
         run: docker push ghcr.io/${{env.REPO}}:latest
-
 # uncomment this if you're also using docker hub
 #      - name: Login to Docker Container Registry
 #        if: ${{ secrets.DOCKERHUB_TOKEN }}
