@@ -82,6 +82,8 @@ jobs:
         shasum -a 256 kuconf-linux-amd64.zip >> checksum.txt
         shasum -a 256 kuconf-darwin-arm64.zip >> checksum.txt
         shasum -a 256 kuconf-darwin-amd64.zip >> checksum.txt
+        shasum -a 256 kuconf-windows-arm64.zip >> checksum.txt
+        shasum -a 256 kuconf-windows-amd64.zip >> checksum.txt
     
     - name: Create Release
       id: create_release
