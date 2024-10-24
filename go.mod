@@ -6,7 +6,6 @@ toolchain go1.22.5
 
 require (
 	cloud.google.com/go/container v1.40.0
-	cloud.google.com/go/iam v1.2.1
 	github.com/alecthomas/kong v1.2.1
 	github.com/aws/aws-sdk-go v1.55.5
 	github.com/mattn/go-colorable v0.1.13
