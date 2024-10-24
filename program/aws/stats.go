@@ -1,4 +1,4 @@
-package program
+package aws
 
 import (
 	"github.com/rs/zerolog/log"

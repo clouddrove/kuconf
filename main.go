@@ -2,14 +2,14 @@ package main
 
 import (
 	"fmt"
-	"github.com/clouddrove/kuconf/program"
+	"github.com/clouddrove/kuconf/program/gcp"
 	"github.com/rs/zerolog/log"
 	"os"
 )
 
 func main() {
 
-	var options program.Options
+	var options gcp.Options
 
 	context, err := options.Parse(os.Args[1:])
 
