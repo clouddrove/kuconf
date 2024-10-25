@@ -99,6 +99,7 @@ func (program *Options) getClustersFrom(s *gcpSessionInfo, clusters chan<- GCPCl
         }(c)
     }
 }
+
 func (program *Options) getUniqueGCPSessions() <-chan *gcpSessionInfo {
     sessions := make(chan *gcpSessionInfo)
 
