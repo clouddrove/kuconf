@@ -5,7 +5,7 @@ go 1.21
 toolchain go1.22.5
 
 require (
-	cloud.google.com/go/container v1.40.0
+	cloud.google.com/go/container v1.42.0
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.8.0
 	github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/containerservice/armcontainerservice v1.0.0
 	github.com/alecthomas/kong v1.2.1
