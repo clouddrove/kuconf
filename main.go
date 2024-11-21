@@ -51,7 +51,7 @@ func main() {
 			log.Err(err).Msg("Program failed for AWS")
 			os.Exit(1)
 		}
-    
+
 	case "azure":
 		ctx, err = optionsAZURE.Parse(os.Args[2:])
 		if err != nil {
