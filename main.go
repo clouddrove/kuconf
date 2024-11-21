@@ -11,6 +11,7 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
+// main function
 func main() {
 	if len(os.Args) < 2 {
 		fmt.Println("Please provide (aws, gcp or azure) as the first argument.")
