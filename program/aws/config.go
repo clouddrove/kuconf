@@ -96,7 +96,7 @@ func (program *Options) WriteConfig(config *api.Config) error {
 	}
 
 	if err := os.Rename(program.KubeConfig, bakFile); err == nil {
-		if e2 := os.Rename(newFile, program.KubeConfig); err == nil {
+		if e2 := os.Rename(newFile, program.KubeConfig); e2 == nil {
 			return nil
 		} else {
 			// There was an error renaming the new file, so restore the bak file

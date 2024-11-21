@@ -125,7 +125,7 @@ func (program *Options) getUniqueSessions() <-chan *sessionInfo {
 
 				for _, region := range program.Regions {
 					wg.Add(1)
-					go func(profile, region, account string) {
+					go func(profile, region, account string, info *sessionInfo) {
 						defer wg.Done()
 						if region != info.region {
 							log := log.With().Str("profile", info.profile).Str("region", region).Logger()
@@ -143,7 +143,7 @@ func (program *Options) getUniqueSessions() <-chan *sessionInfo {
 								log.Error().Err(err).Msg("Failed to create session")
 							}
 						}
-					}(info.profile, region, info.account)
+					}(info.profile, region, info.account, info)
 				}
 			}
 		}
