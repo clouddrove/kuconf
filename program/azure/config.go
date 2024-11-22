@@ -9,7 +9,7 @@ import (
 )
 
 func captureConfig(c AzureClusterInfo, resourceGroup string, i *api.Config) error {
-	certificateData := []byte(*c.ManagedCluster.Properties.NetworkProfile.ServiceCidr) 
+	certificateData := []byte(*c.ManagedCluster.Properties.NetworkProfile.ServiceCidr)
 
 	cluster := api.Cluster{
 		Server:                   "https://" + *c.ManagedCluster.Properties.Fqdn,
