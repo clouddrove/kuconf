@@ -11,7 +11,7 @@ require (
 	github.com/aws/aws-sdk-go v1.55.5
 	github.com/mattn/go-colorable v0.1.14
 	github.com/pkg/errors v0.9.1
-	github.com/rs/zerolog v1.33.0
+	github.com/rs/zerolog v1.34.0
 	google.golang.org/api v0.214.0
 	k8s.io/client-go v0.29.1
 )
