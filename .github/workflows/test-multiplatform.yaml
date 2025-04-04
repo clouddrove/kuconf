@@ -1,34 +1,35 @@
-on:
-  # This is configured to run on pull requests. If desired you can change it to run on all pushes.
-  # be aware that windows and MacOS takes can take a while for setup and both of them incur extra expense for Actions.
-  pull_request:
-  # this will allow the tests to be run on demand
-  workflow_dispatch:
-
-
 name: Test on all platforms
 
+on:
+  pull_request:
+    # this will allow the tests to be run on demand
+  workflow_dispatch:
+
 env:
-  GO_VERSION: 1.23
+  GO_VERSION: "1.22.1"  # Using stable version
 
 jobs:
   test:
-    if: ${{ true }}
-    name: Test on all platforms
+    name: Test on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os:
-          - ubuntu-latest
-          - macos-latest
-          - windows-latest
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: ${{env.GO_VERSION}}
+          go-version: ${{ env.GO_VERSION }}
+          cache: true
 
-      - name: Test
-        run: go test ./...
+      - name: Sync dependencies
+        run: |
+          go mod tidy
+          go mod download
+
+      - name: Run tests
+        run: go test -v ./...
