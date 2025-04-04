@@ -15,19 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Use ONLY setup-go's built-in caching (recommended approach)
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
           go-version: ${{ env.GO_VERSION }}
-          cache: true
-
-      - name: Cache Go modules
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/go/pkg/mod
-            ./.go-cache
-          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          cache: true  # Let setup-go handle caching automatically
 
       - name: Download dependencies
         run: go mod download
@@ -53,21 +46,15 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: ${{ env.GO_VERSION }}
-          
-      - name: Get unformatted files
-        id: unformatted
+          cache: true
+
+      - name: Check formatting
         run: |
           unformatted=$(gofmt -l .)
           if [ -n "$unformatted" ]; then
             echo "::error::Unformatted files found:"
-            echo "$unformatted"
-            echo "unformatted=true" >> $GITHUB_OUTPUT
+            echo "$unformatted" | while read -r line; do
+              echo "::error file=$line::File needs formatting"
+            done
+            exit 1
           fi
-
-      - name: Format files
-        if: steps.unformatted.outputs.unformatted == 'true'
-        run: |
-          gofmt -w .
-          echo "::warning::Auto-formatted files. Please commit these changes."
-          git diff --name-only
-          exit 1
