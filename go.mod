@@ -13,7 +13,7 @@ require (
 	github.com/mattn/go-colorable v0.1.14
 	github.com/pkg/errors v0.9.1
 	github.com/rs/zerolog v1.34.0
-	google.golang.org/api v0.234.0
+	google.golang.org/api v0.235.0
 	k8s.io/client-go v0.33.0
 )
 
