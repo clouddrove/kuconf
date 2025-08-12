@@ -13,7 +13,7 @@ jobs:
     name: Run checks and build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       # Use ONLY setup-go's built-in caching (recommended approach)
       - name: Set up Go
@@ -38,7 +38,7 @@ jobs:
     name: Code Formatting
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
