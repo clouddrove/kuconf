@@ -8,7 +8,7 @@ require (
 	cloud.google.com/go/container v1.43.0
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.10.1
 	github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/containerservice/armcontainerservice v1.0.0
-	github.com/alecthomas/kong v1.12.0
+	github.com/alecthomas/kong v1.12.1
 	github.com/aws/aws-sdk-go v1.55.7
 	github.com/mattn/go-colorable v0.1.14
 	github.com/pkg/errors v0.9.1
